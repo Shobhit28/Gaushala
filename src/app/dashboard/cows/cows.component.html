@@ -1,0 +1,27 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdey">
+    <div class="row justify-content-left">
+		<div class="col-md-2">
+    <form class="form-group">
+      <input type="search" class="form-control mr-sm-2" id="search" placeholder="Search for cows" [(ngModel)]="nameSearch" [ngModelOptions]="{
+        standalone:true}">
+    </form>
+<div class="form-group">
+</div>
+
+<table class="table">
+  <tbody>
+    <tr *ngFor ="let name of cowsarr|filter:nameSearch" [class.selected]="name==selectedCows">
+      <td><button class="btn btn-light-md-5" (click)= "onClickEntry(name)">{{name.name}}</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+<div class="col-lg-8">
+  <div class="card-body-md-6" style="background-color:dimgrey; height:auto" *ngIf="selectedCows">
+    <p class="card-text">{{selectedCows.name}}</p>
+  </div>
+</div>
+</div>
