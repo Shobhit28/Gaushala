@@ -1,0 +1,95 @@
+<!--<div class="page-area">
+  
+  <div class="col-md-8">
+    <h2>Shed</h2>
+  </div>
+  
+  
+  <div class="col-sm-2">
+    <div class="row justify-content-left">
+    
+      <div class="col-md-8">
+        <div class="form-group">
+        
+           <input type="search" class="form-control" id="search"  
+            placeholder="Enter Shed" [(ngModel)]="nameSearch">
+        
+        </div>
+            <table class="table">
+       
+             <tbody>
+               <tr *ngFor="let shed of shedArr | filter:nameSearch" [class.selected]="shed === selectedShed">
+
+            
+                <td><button class="btn btn-light-md-5" (click)="onClickEntry(shed)">{{shed.name}}</button></td>
+            
+               </tr>
+         
+              </tbody>
+            </table>
+    
+        
+      </div>
+            <div class="col-md-8">
+              <div class="card-body-md-2" style="height:auto" *ngIf="selectedShed">
+                 <p class="card-text">{{selectedShed.name}}</p>
+              </div>
+            </div>
+    </div>
+      
+  </div>
+     
+</div>-->
+
+<h2>Shed</h2>
+<div class="row">
+  <div class="column">
+    <div class="form-group">
+        
+      <input type="search" class="form-control" id="search"  
+       placeholder="Enter Shed" [(ngModel)]="nameSearch">
+   
+    </div>
+       <table class="table">
+  
+        <tbody>
+          <tr *ngFor="let shed of shedArr | filter:nameSearch" [class.selected]="shed === selectedShed">
+
+       
+           <td><button class="btn btn-light-md-5" (click)="onClickEntry(shed)">{{shed.name}}</button></td>
+       
+          </tr>
+    
+         </tbody>
+       </table>
+
+  </div>
+  <div class="col-md-3  col-md-offset-3 col-sm-3 col-sm-offset-3">
+    <div class="card border-success mb-3" style="max-width: 18rem;">
+      <div class="card-header">
+        Details
+      </div>
+    <div class="card-body-md-2 text-success" style="height:auto" *ngIf="selectedShed">
+      <p class="card-text">{{selectedShed.name}}</p>
+   </div>
+</div>
+  </div>
+</div>
+
+
+
+
+
+<!--<div class="card">
+  <div class="card-header">
+    Details
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    
+  </div>
+</div>-->
+  
+
+
