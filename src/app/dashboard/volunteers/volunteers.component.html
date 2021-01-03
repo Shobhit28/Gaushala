@@ -8,7 +8,11 @@
     <table class="table">
       <tbody>
         <tr *ngFor="let name of volunteersArr | volunteerFilterPipe:nameSearch" [class.selected]="name === selectedVolunteeer">
-          <td><button class="btn btn-light-md-5" (click)="onClickEntry(name)">{{name.name}}</button></td>
+          <td>
+            <a class="test" (click)="onClickEntry(name)">
+            {{name.name}}
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -20,3 +24,4 @@
     </div>
   </div>
 </div>
+
